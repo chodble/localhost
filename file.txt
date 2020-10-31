@@ -1,0 +1,56 @@
+package cn.sivan.simple.date.jdk8;
+
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+
+
+/**
+ * jdk 1.8 新的全新的日期和时间 API
+ * LocalDate、LocalTime、LocalDateTime
+ * 以LocalDateTime为例叮咚叮
+ */
+public class TestLocalDateTime {
+
+    public static void main(String[] args) {
+
+        //获取当前时间
+        LocalDateTime ldt = LocalDateTime.now();
+        System.out.println(ldt);
+
+        //手动指定时间
+        LocalDateTime ldt2 = LocalDateTime.of(2020, 10, 23, 13, 55, 36);
+        System.out.println(ldt2);
+
+        //获取年月日等
+        int year = ldt2.getYear();
+        int month = ldt2.getMonthValue();
+        int day = ldt2.getDayOfMonth();
+        int hour = ldt2.getHour();
+        int minute = ldt2.getMinute();
+        int second = ldt2.getSecond();
+        System.out.printf("获取年月日时分秒：%d-%d-%d %d:%d:%d%n", year, month, day, hour, minute, second);
+
+
+        //今年的第多少天
+        int dayOfYear = ldt2.getDayOfYear();
+        System.out.println(dayOfYear);
+
+        //这星期的第几天 星期几
+        int dayOfWeek = ldt2.getDayOfWeek().getValue();
+        System.out.println(dayOfWeek);
+
+        //日期操作 添加一年
+        LocalDateTime localDateTime = ldt2.plusYears(1);
+        System.out.println(localDateTime.getYear());
+
+        //日期操作 减少一年
+        localDateTime = ldt2.minusYears(1);
+        System.out.println(localDateTime.getYear());
+
+        //获取Instant 获取时间戳
+        Instant instant = ldt2.atZone(ZoneId.systemDefault()).toInstant();
+        instant.toEpochMilli();
+    }
+
+}
