@@ -8,7 +8,7 @@ import java.time.ZoneId;
 /**
  * jdk 1.8 新的全新的日期和时间 API
  * LocalDate、LocalTime、LocalDateTime
- * 以LocalDateTime为例
+ * 以LocalDateTime为例叮咚叮
  */
 public class TestLocalDateTime {
 
