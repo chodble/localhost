@@ -12,7 +12,6 @@ import java.time.ZoneId;
  */
 public class TestLocalDateTime {
 
-	//这是sivan-dev的更新内容
     public static void main(String[] args) {
 
         //获取当前时间
